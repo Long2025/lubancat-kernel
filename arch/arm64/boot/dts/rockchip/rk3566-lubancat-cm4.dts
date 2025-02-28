@@ -50,21 +50,6 @@
             <0x0 0xfd907000 0x0 0x1000>;
     };
 
-	adc_keys: adc-keys {
-		compatible = "adc-keys";
-		io-channels = <&saradc 0>;
-		io-channel-names = "buttons";
-		keyup-threshold-microvolt = <1800000>;
-		poll-interval = <100>;
-
-		restart-key {
-			label = "restart";
-			linux,code = <KEY_RESTART>;
-			press-threshold-microvolt = <9>;
-		};
-	};
-
-
 	leds: leds {
 		status = "okay";
 		compatible = "gpio-leds";

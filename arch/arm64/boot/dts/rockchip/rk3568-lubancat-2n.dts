@@ -89,20 +89,6 @@
 		};
 	};
 
-	adc_keys: adc-keys {
-		compatible = "adc-keys";
-		io-channels = <&saradc 0>;
-		io-channel-names = "buttons";
-		keyup-threshold-microvolt = <1800000>;
-		poll-interval = <100>;
-
-		restart-key {
-			label = "restart";
-			linux,code = <KEY_RESTART>;
-			press-threshold-microvolt = <9>;
-		};
-	};
-
 	dc_5v: dc-5v {
 		compatible = "regulator-fixed";
 		regulator-name = "dc_5v";
