@@ -55,13 +55,13 @@ V2版仅支持双屏，启用MIPI-DSI1时，HDMI会默认禁掉。
     rx_delay = <0x07>;
 };
 
-&sys_status_led {
+&sys_led {
 	gpios = <&gpio1 RK_PA4 GPIO_ACTIVE_LOW>;
 	pinctrl-names = "default";
-	pinctrl-0 = <&sys_status_led_pin>;	
+	pinctrl-0 = <&sys_led_pin>;	
 };
 
-&sys_status_led_pin {
+&sys_led_pin {
 	rockchip,pins = <1 RK_PA4 RK_FUNC_GPIO &pcfg_pull_none>;	
 };
 
