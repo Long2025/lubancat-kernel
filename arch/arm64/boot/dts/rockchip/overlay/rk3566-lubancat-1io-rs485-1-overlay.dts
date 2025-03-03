@@ -12,7 +12,6 @@
 			pinctrl-names = "default";
 			pinctrl-0 = <&uart1m0_xfer &rs485_1_rts>;
 			rs485-de-gpios = <&gpio2 RK_PB5 GPIO_ACTIVE_HIGH>;
-			linux,rs485-enabled-at-boot-time;
 			status = "okay";
 		};
 	};
