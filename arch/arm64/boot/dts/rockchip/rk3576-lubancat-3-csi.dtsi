@@ -477,7 +477,7 @@
 		dvdd-supply = <&cam_dvdd>;
 		reset-gpios = <&gpio2 RK_PB3 GPIO_ACTIVE_LOW>;
 
-		rockchip,camera-module-index = <0>;
+		rockchip,camera-module-index = <1>;
 		rockchip,camera-module-facing = "back";
 		rockchip,camera-module-name = "CMK-OT2022-PX1";
 		rockchip,camera-module-lens-name = "IR0147-50IRC-8M-F20";
@@ -509,7 +509,7 @@
 		dvdd-supply = <&cam_dvdd>;
 		reset-gpios = <&gpio2 RK_PB5 GPIO_ACTIVE_LOW>;
 
-		rockchip,camera-module-index = <0>;
+		rockchip,camera-module-index = <2>;
 		rockchip,camera-module-facing = "back";
 		rockchip,camera-module-name = "CMK-OT2022-PX1";
 		rockchip,camera-module-lens-name = "IR0147-50IRC-8M-F20";
@@ -541,7 +541,7 @@
 		dvdd-supply = <&cam_dvdd>;
 		reset-gpios = <&gpio3 RK_PC7 GPIO_ACTIVE_LOW>;
 
-		rockchip,camera-module-index = <0>;
+		rockchip,camera-module-index = <3>;
 		rockchip,camera-module-facing = "back";
 		rockchip,camera-module-name = "CMK-OT2022-PX1";
 		rockchip,camera-module-lens-name = "IR0147-50IRC-8M-F20";
@@ -573,7 +573,7 @@
 		dvdd-supply = <&cam_dvdd>;
 		reset-gpios = <&gpio3 RK_PC0 GPIO_ACTIVE_LOW>;
 
-		rockchip,camera-module-index = <0>;
+		rockchip,camera-module-index = <4>;
 		rockchip,camera-module-facing = "back";
 		rockchip,camera-module-name = "CMK-OT2022-PX1";
 		rockchip,camera-module-lens-name = "IR0147-50IRC-8M-F20";
