@@ -639,22 +639,6 @@
 	pinctrl-0 = <&pwm12m1_pins>;
 };
 
-&can0 {
-	status = "okay";
-	assigned-clocks = <&cru CLK_CAN0>;
-	assigned-clock-rates = <200000000>;
-	pinctrl-names = "default";
-	pinctrl-0 = <&can0m2_pins>;
-};
-
-&can1 {
-	status = "okay";
-	assigned-clocks = <&cru CLK_CAN1>;
-	assigned-clock-rates = <200000000>;
-	pinctrl-names = "default";
-	pinctrl-0 = <&can1m1_pins>;
-};
-
 &i2c0 {
 	status = "okay";
 
