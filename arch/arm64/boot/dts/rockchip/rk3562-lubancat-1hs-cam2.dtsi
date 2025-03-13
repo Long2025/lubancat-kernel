@@ -76,7 +76,7 @@
 		status = "okay";
 		compatible = "dongwoon,dw9714";
 		reg = <0xc>;
-		rockchip,camera-module-index = <0>;
+		rockchip,camera-module-index = <2>;
 		rockchip,vcm-max-current = <100>;
 		rockchip,vcm-start-current = <0>;
 		rockchip,vcm-rated-current = <100>;
@@ -117,7 +117,7 @@
 		reset-gpios = <&gpio6 5 GPIO_ACTIVE_LOW>;
 		rotation = <180>;
 
-		rockchip,camera-module-index = <0>;
+		rockchip,camera-module-index = <2>;
 		rockchip,camera-module-facing = "back";
 		rockchip,camera-module-name = "THDS11073";
 		rockchip,camera-module-lens-name = "Largan-40122a1";
@@ -146,7 +146,7 @@
 		reset-gpios = <&gpio6 5 GPIO_ACTIVE_HIGH>;
 		rotation = <180>;
 
-		rockchip,camera-module-index = <0>;
+		rockchip,camera-module-index = <2>;
 		rockchip,camera-module-facing = "back";
 		rockchip,camera-module-name = "HS5885-BNSM1018-V01";
 		rockchip,camera-module-lens-name = "default";
@@ -203,7 +203,7 @@
 		pwdn-gpios = <&gpio6 4 GPIO_ACTIVE_HIGH>;
 		reset-gpios = <&gpio6 5 GPIO_ACTIVE_LOW>;
 
-		rockchip,camera-module-index = <0>;
+		rockchip,camera-module-index = <2>;
 		rockchip,camera-module-facing = "back";
 		rockchip,camera-module-name = "CMK-OT2022-PX1";
 		rockchip,camera-module-lens-name = "IR0147-50IRC-8M-F20";

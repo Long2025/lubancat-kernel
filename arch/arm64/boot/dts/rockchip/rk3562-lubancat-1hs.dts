@@ -19,10 +19,7 @@
 //#include "rk3562-lubancat-lvds-10.1-800x1280.dtsi"
 // #include "rk3562-lubancat-mipi-5.0-1080x1920.dtsi"
 
-#include "rk3562-lubancat-1hs-cam0.dtsi"
-// #include "rk3562-lubancat-1hs-cam1.dtsi"
-// #include "rk3562-lubancat-1hs-cam2.dtsi"
-// #include "rk3562-lubancat-1hs-cam3.dtsi"
+#include "rk3562-lubancat-1hs-csi.dtsi"
 
 / {
 	model = "Embedfire RK3562 LubanCat-1HS";
