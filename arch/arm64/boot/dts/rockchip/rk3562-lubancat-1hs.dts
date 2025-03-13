@@ -521,18 +521,6 @@
 	pinctrl-0 = <&uart7m0_xfer>;
 };
 
-&uart8 {
-	status = "okay";
-	pinctrl-names = "default";
-	pinctrl-0 = <&uart8m0_xfer>;
-};
-
-&uart9 {
-	status = "okay";
-	pinctrl-names = "default";
-	pinctrl-0 = <&uart9m1_xfer>;
-};
-
 &pwm3 {
 	compatible = "rockchip,remotectl-pwm";
 	pinctrl-names = "default";
