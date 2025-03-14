@@ -11,58 +11,58 @@
 #include <dt-bindings/sensor-dev.h>
 
 / {
-	fragment@0 {
-		target = <&i2c2>;
+    fragment@0 {
+        target = <&i2c5>;
 
-		__overlay__ {
-            status = "okay";
-        };
-    };
-
-	fragment@1 {
-        target = <&dphy4_dw9714>;
         __overlay__ {
             status = "okay";
         };
     };
 
-	fragment@2 {
-        target = <&dphy4_ov8858>;
+    fragment@1 {
+        target = <&dphy5_dw9714>;
+        __overlay__ {
+            status = "okay";
+        };
+    };
+
+    fragment@2 {
+        target = <&dphy5_ov8858>;
         __overlay__ {
             status = "okay";
         };
     };
 
     fragment@3 {
-        target = <&csi2_dphy4>;
+        target = <&csi2_dphy5>;
         __overlay__ {
             status = "okay";
         };
     };
 
     fragment@4 {
-        target = <&mipi2_csi2>;
+        target = <&mipi3_csi2>;
         __overlay__ {
             status = "okay";
         };
     };
 
     fragment@5 {
-        target = <&rkcif_mipi_lvds2>;
+        target = <&rkcif_mipi_lvds3>;
         __overlay__ {
             status = "okay";
         };
     };
 
     fragment@6 {
-        target = <&rkcif_mipi_lvds2_sditf>;
+        target = <&rkcif_mipi_lvds3_sditf>;
         __overlay__ {
             status = "okay";
         };
     };
 
     fragment@7 {
-        target = <&rkisp_vir2>;
+        target = <&rkisp_vir3>;
         __overlay__ {
             status = "okay";
         };
