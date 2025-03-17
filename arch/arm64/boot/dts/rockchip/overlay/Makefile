@@ -28,6 +28,10 @@ dtbo-$(CONFIG_CPU_RK3562) += \
 	rk3562-lubancat-1hs-rs485-1-overlay.dtbo \
 	rk3562-lubancat-1hs-rs485-2-overlay.dtbo \
 	rk3562-lubancat-1hs-lvds-10.1-800x1280-overlay.dtbo \
+	rk3562-lubancat-1hs-lvds-1280x800-10.1inch-bsdn10-overlay.dtbo \
+	rk3562-lubancat-1hs-mipi-1080x1920-5.5inch-ebf410125-overlay.dtbo \
+	rk3562-lubancat-1hs-mipi-1024x600-7inch-ebf410173-overlay.dtbo \
+	rk3562-lubancat-1hs-mipi-800x1280-10.1inch-ebf410177-overlay.dtbo \
 	rk3562-lubancat-1hs-cam0-imx415-3840x2160-15fps-overlay.dtbo \
 	rk3562-lubancat-1hs-cam0-imx415-1920x1080-60fps-overlay.dtbo \
 	rk3562-lubancat-1hs-cam1-imx415-3840x2160-15fps-overlay.dtbo \
