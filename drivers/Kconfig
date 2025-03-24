@@ -249,4 +249,6 @@ source "drivers/rknpu/Kconfig"
 
 source "drivers/pcie_mhi/Kconfig"
 
+source "drivers/ebf_module/Kconfig"
+
 endmenu
