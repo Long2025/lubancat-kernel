@@ -175,6 +175,7 @@ dtbo-$(CONFIG_CPU_RK3576) += \
 	rk3576-lubancat-uart8-m2-overlay.dtbo \
 	rk3576-lubancat-rgmii-gmac1-overlay.dtbo \
 	rk3576-lubancat-sata0-overlay.dtbo \
+	rk3576-lubancat-3-xl9535-overlay.dtbo \
 	rk3576-lubancat-3-cam0-imx415-overlay.dtbo \
 	rk3576-lubancat-3-cam1-imx415-overlay.dtbo \
 	rk3576-lubancat-3-cam2-imx415-overlay.dtbo \
