@@ -7,6 +7,7 @@ dtb-$(CONFIG_CPU_RK3588) += \
 	rk3588-lubancat-5.dtb \
 	rk3588-lubancat-5-v2.dtb \
 	rk3588-lubancat-5io.dtb \
+	rk3588-lubancat-5ioi.dtb \
 
 endif
 
