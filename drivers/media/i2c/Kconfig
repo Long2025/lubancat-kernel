@@ -1563,6 +1563,28 @@ config VIDEO_GC0403
 	  To compile this driver as a module, choose M here: the
 	  module will be called gc0403.
 
+config VIDEO_GC08A8
+	tristate "GalaxyCore GC08A8 sensor support"
+	depends on I2C && VIDEO_V4L2 && VIDEO_V4L2_SUBDEV_API
+	depends on MEDIA_CAMERA_SUPPORT
+	select V4L2_FWNODE
+	help
+	  Support for the GalaxyCore GC08A8 sensor.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called gc08a8.
+
+config VIDEO_GC4653
+	tristate "GalaxyCore GC4653 sensor support"
+	depends on I2C && VIDEO_V4L2 && VIDEO_V4L2_SUBDEV_API
+	depends on MEDIA_CAMERA_SUPPORT
+	select V4L2_FWNODE
+	help
+	  Support for the GalaxyCore GC4653 sensor.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called gc4653.
+
 config VIDEO_GC1054
 	tristate "GalaxyCore GC1054 sensor support"
 	depends on I2C && VIDEO_V4L2 && VIDEO_V4L2_SUBDEV_API
