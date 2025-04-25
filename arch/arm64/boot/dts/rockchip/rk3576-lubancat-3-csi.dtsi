@@ -73,7 +73,7 @@
 		vin-supply = <&vdd_cam0_5v>;
 	};
 
-    	ext_cam_37m_clk: external-camera-37m-clock {
+    ext_cam_37m_clk: external-camera-37m-clock {
 		compatible = "fixed-clock";
 		clock-frequency = <37125000>;
 		clock-output-names = "ext_cam_37m_clk";
@@ -212,6 +212,12 @@
 				remote-endpoint = <&imx415_dphy1_out>;
 				data-lanes = <1 2>;
 			};
+
+			dphy1_in_ov8858: endpoint@2 {
+				reg = <2>;
+				remote-endpoint = <&ov8858_dphy1_out>;
+				data-lanes = <1 2>;
+			};
 		};
 		port@1 {
 			reg = <1>;
@@ -241,6 +247,12 @@
 			dphy2_in_imx415: endpoint@1 {
 				reg = <1>;
 				remote-endpoint = <&imx415_dphy2_out>;
+				data-lanes = <1 2>;
+			};
+
+			dphy2_in_ov8858: endpoint@2 {
+				reg = <2>;
+				remote-endpoint = <&ov8858_dphy2_out>;
 				data-lanes = <1 2>;
 			};
 		};
@@ -274,6 +286,12 @@
 				remote-endpoint = <&imx415_dphy3_out>;
 				data-lanes = <1 2>;
 			};
+
+			dphy3_in_ov8858: endpoint@2 {
+				reg = <2>;
+				remote-endpoint = <&ov8858_dphy3_out>;
+				data-lanes = <1 2>;
+			};
 		};
 		port@1 {
 			reg = <1>;
@@ -303,6 +321,12 @@
 			dphy4_in_imx415: endpoint@1 {
 				reg = <1>;
 				remote-endpoint = <&imx415_dphy4_out>;
+				data-lanes = <1 2>;
+			};
+
+			dphy4_in_ov8858: endpoint@2 {
+				reg = <2>;
+				remote-endpoint = <&ov8858_dphy4_out>;
 				data-lanes = <1 2>;
 			};
 		};
@@ -465,6 +489,21 @@
 	status = "disabled";
 	pinctrl-0 = <&i2c4m2_xfer>;
 
+	dw9714_1: dw9714-1@c {
+		status = "okay";
+		compatible = "dongwoon,dw9714";
+		reg = <0xc>;
+		rockchip,camera-module-index = <1>;
+		rockchip,vcm-max-current = <100>;
+		rockchip,vcm-start-current = <0>;
+		rockchip,vcm-rated-current = <100>;
+		rockchip,vcm-step-mode = <0xd>;
+		rockchip,vcm-dlc-enable = <0>;
+		rockchip,vcm-mclk = <0>;
+		rockchip,vcm-t-src = <0>;
+		rockchip,camera-module-facing = "back";
+	};
+
 	dcphy1_imx415: dcphy1-imx415@1a {
 		compatible = "sony,imx415";
 		status = "disabled";
@@ -490,12 +529,55 @@
 			};
 		};
 	};
+
+	ov8858_1: ov8858-1@36 {
+		compatible = "ovti,ov8858";
+		status = "disabled";
+		reg = <0x36>;
+		clocks = <&ext_cam_24m_clk>;
+		clock-names = "xvclk";
+		dovdd-supply= <&cam_dovdd>; /* 1.8v */
+		avdd-supply = <&cam_avdd>;  /* 2.8v */
+		dvdd-supply = <&cam_dvdd>;  /* 1.2v */
+		reset-gpios = <&gpio2 RK_PB3 GPIO_ACTIVE_LOW>;
+		pwdn-gpios = <&gpio2 RK_PB0 GPIO_ACTIVE_HIGH>;
+		rotation = <180>;
+
+		rockchip,camera-module-index = <1>;
+		rockchip,camera-module-facing = "back";
+		rockchip,camera-module-name = "HS5885-BNSM1018-V01";
+		rockchip,camera-module-lens-name = "default";
+		lens-focus = <&dw9714_1>;
+		port {
+			/* MIPI CSI-2 bus endpoint */
+			ov8858_dphy1_out: endpoint {
+				remote-endpoint = <&dphy1_in_ov8858>;
+				clock-lanes = <0>;
+				data-lanes = <1 2>;
+			};
+		};
+	};
 };
 
 // CAM 2
 &i2c5 {
 	status = "disabled";
 	pinctrl-0 = <&i2c5m3_xfer>;
+
+	dw9714_2: dw9714-2@c {
+		status = "okay";
+		compatible = "dongwoon,dw9714";
+		reg = <0xc>;
+		rockchip,camera-module-index = <2>;
+		rockchip,vcm-max-current = <100>;
+		rockchip,vcm-start-current = <0>;
+		rockchip,vcm-rated-current = <100>;
+		rockchip,vcm-step-mode = <0xd>;
+		rockchip,vcm-dlc-enable = <0>;
+		rockchip,vcm-mclk = <0>;
+		rockchip,vcm-t-src = <0>;
+		rockchip,camera-module-facing = "back";
+	};
 
 	dcphy2_imx415: dcphy2-imx415@1a {
 		compatible = "sony,imx415";
@@ -522,12 +604,55 @@
 			};
 		};
 	};
+
+	ov8858_2: ov8858-2@36 {
+		compatible = "ovti,ov8858";
+		status = "disabled";
+		reg = <0x36>;
+		clocks = <&ext_cam_24m_clk>;
+		clock-names = "xvclk";
+		dovdd-supply= <&cam_dovdd>; /* 1.8v */
+		avdd-supply = <&cam_avdd>;  /* 2.8v */
+		dvdd-supply = <&cam_dvdd>;  /* 1.2v */
+		reset-gpios = <&gpio2 RK_PB5 GPIO_ACTIVE_LOW>;
+		pwdn-gpios = <&gpio2 RK_PB4 GPIO_ACTIVE_HIGH>;
+		rotation = <180>;
+
+		rockchip,camera-module-index = <2>;
+		rockchip,camera-module-facing = "back";
+		rockchip,camera-module-name = "HS5885-BNSM1018-V01";
+		rockchip,camera-module-lens-name = "default";
+		lens-focus = <&dw9714_2>;
+		port {
+			/* MIPI CSI-2 bus endpoint */
+			ov8858_dphy2_out: endpoint {
+				remote-endpoint = <&dphy2_in_ov8858>;
+				clock-lanes = <0>;
+				data-lanes = <1 2>;
+			};
+		};
+	};
 };
 
 // CAM 3
 &i2c7 {
 	status = "disabled";
 	pinctrl-0 = <&i2c7m1_xfer>;
+
+	dw9714_3: dw9714-3@c {
+		status = "okay";
+		compatible = "dongwoon,dw9714";
+		reg = <0xc>;
+		rockchip,camera-module-index = <3>;
+		rockchip,vcm-max-current = <100>;
+		rockchip,vcm-start-current = <0>;
+		rockchip,vcm-rated-current = <100>;
+		rockchip,vcm-step-mode = <0xd>;
+		rockchip,vcm-dlc-enable = <0>;
+		rockchip,vcm-mclk = <0>;
+		rockchip,vcm-t-src = <0>;
+		rockchip,camera-module-facing = "back";
+	};
 
 	dcphy3_imx415: dcphy3-imx415@1a {
 		compatible = "sony,imx415";
@@ -554,12 +679,55 @@
 			};
 		};
 	};
+
+	ov8858_3: ov8858-3@36 {
+		compatible = "ovti,ov8858";
+		status = "disabled";
+		reg = <0x36>;
+		clocks = <&ext_cam_24m_clk>;
+		clock-names = "xvclk";
+		dovdd-supply= <&cam_dovdd>; /* 1.8v */
+		avdd-supply = <&cam_avdd>;  /* 2.8v */
+		dvdd-supply = <&cam_dvdd>;  /* 1.2v */
+		reset-gpios = <&gpio3 RK_PC7 GPIO_ACTIVE_LOW>;
+		pwdn-gpios = <&gpio3 RK_PC6 GPIO_ACTIVE_HIGH>;
+		rotation = <180>;
+
+		rockchip,camera-module-index = <3>;
+		rockchip,camera-module-facing = "back";
+		rockchip,camera-module-name = "HS5885-BNSM1018-V01";
+		rockchip,camera-module-lens-name = "default";
+		lens-focus = <&dw9714_3>;
+		port {
+			/* MIPI CSI-2 bus endpoint */
+			ov8858_dphy3_out: endpoint {
+				remote-endpoint = <&dphy3_in_ov8858>;
+				clock-lanes = <0>;
+				data-lanes = <1 2>;
+			};
+		};
+	};
 };
 
 // CAM 4
 &i2c8 {
 	status = "disabled";
 	pinctrl-0 = <&i2c8m2_xfer>;
+
+	dw9714_4: dw9714-4@c {
+		status = "okay";
+		compatible = "dongwoon,dw9714";
+		reg = <0xc>;
+		rockchip,camera-module-index = <4>;
+		rockchip,vcm-max-current = <100>;
+		rockchip,vcm-start-current = <0>;
+		rockchip,vcm-rated-current = <100>;
+		rockchip,vcm-step-mode = <0xd>;
+		rockchip,vcm-dlc-enable = <0>;
+		rockchip,vcm-mclk = <0>;
+		rockchip,vcm-t-src = <0>;
+		rockchip,camera-module-facing = "back";
+	};
 
 	dcphy4_imx415: dcphy4-imx415@1a {
 		compatible = "sony,imx415";
@@ -582,6 +750,34 @@
 		port {
 			imx415_dphy4_out: endpoint {
 				remote-endpoint = <&dphy4_in_imx415>;
+				data-lanes = <1 2>;
+			};
+		};
+	};
+
+	ov8858_4: ov8858-4@36 {
+		compatible = "ovti,ov8858";
+		status = "disabled";
+		reg = <0x36>;
+		clocks = <&ext_cam_24m_clk>;
+		clock-names = "xvclk";
+		dovdd-supply= <&cam_dovdd>; /* 1.8v */
+		avdd-supply = <&cam_avdd>;  /* 2.8v */
+		dvdd-supply = <&cam_dvdd>;  /* 1.2v */
+		reset-gpios = <&gpio3 RK_PC0 GPIO_ACTIVE_LOW>;
+		pwdn-gpios = <&gpio1 RK_PD4 GPIO_ACTIVE_HIGH>;
+		rotation = <180>;
+
+		rockchip,camera-module-index = <4>;
+		rockchip,camera-module-facing = "back";
+		rockchip,camera-module-name = "HS5885-BNSM1018-V01";
+		rockchip,camera-module-lens-name = "default";
+		lens-focus = <&dw9714_4>;
+		port {
+			/* MIPI CSI-2 bus endpoint */
+			ov8858_dphy4_out: endpoint {
+				remote-endpoint = <&dphy4_in_ov8858>;
+				clock-lanes = <0>;
 				data-lanes = <1 2>;
 			};
 		};
