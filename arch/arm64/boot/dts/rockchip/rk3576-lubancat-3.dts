@@ -89,18 +89,6 @@
 		vin-supply = <&vcc_sys>;
 	};
 
-	pcie0_waken: pcie0-waken {
-		compatible = "regulator-fixed";
-		regulator-name = "pcie0_waken";
-		regulator-min-microvolt = <3300000>;
-		regulator-max-microvolt = <3300000>;
-		enable-active-high;
-		regulator-always-on;
-		gpios = <&gpio0 RK_PD2 GPIO_ACTIVE_HIGH>;
-		startup-delay-us = <5000>;
-		vin-supply = <&vcc_sys>;
-	};
-
 	vbus5v0_typec: vbus5v0-typec {
 		compatible = "regulator-fixed";
 		regulator-name = "vbus5v0_typec";
@@ -822,6 +810,8 @@
 	reset-gpios = <&gpio2 RK_PB1 GPIO_ACTIVE_HIGH>;
 	disable-gpios = <&gpio4 RK_PC7 GPIO_ACTIVE_HIGH>;
 	vpcie3v3-supply = <&vcc3v3_pcie0>;
+	pinctrl-names = "default";
+	pinctrl-0 = <&pcie_disable_gpio>;
 	status = "okay";
 };
 
@@ -941,6 +931,12 @@
 	headphone {
 		hp_det: hp-det {
 			rockchip,pins = <4 RK_PB0 RK_FUNC_GPIO &pcfg_pull_up>;
+		};
+	};
+
+	pcie {
+		pcie_disable_gpio: pcie-disable-gpio {
+			rockchip,pins = <4 RK_PC7 RK_FUNC_GPIO &pcfg_pull_up>;
 		};
 	};
 
