@@ -203,6 +203,11 @@ dtbo-$(CONFIG_CPU_RK3576) += \
 	rk3576-lubancat-3-cam2-gc08a8-3264x2448-30fps-overlay.dtbo \
 	rk3576-lubancat-3-cam3-gc08a8-3264x2448-30fps-overlay.dtbo \
 	rk3576-lubancat-3-cam4-gc08a8-3264x2448-30fps-overlay.dtbo \
+	rk3576-lubancat-3-cam0-gc2053-1920x1080-30fps-overlay.dtbo \
+	rk3576-lubancat-3-cam1-gc2053-1920x1080-30fps-overlay.dtbo \
+	rk3576-lubancat-3-cam2-gc2053-1920x1080-30fps-overlay.dtbo \
+	rk3576-lubancat-3-cam3-gc2053-1920x1080-30fps-overlay.dtbo \
+	rk3576-lubancat-3-cam4-gc2053-1920x1080-30fps-overlay.dtbo \
 	rk3576-lubancat-3-cam0-gc4653-2560x1440-30fps-overlay.dtbo \
 	rk3576-lubancat-3-cam1-gc4653-2560x1440-30fps-overlay.dtbo \
 	rk3576-lubancat-3-cam2-gc4653-2560x1440-30fps-overlay.dtbo \
