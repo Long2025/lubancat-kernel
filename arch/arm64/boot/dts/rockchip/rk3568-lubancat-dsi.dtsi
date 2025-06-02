@@ -95,6 +95,18 @@
 		touchscreen-inverted-y = <1>;
 	};
 
+	gt911_dsi0_1: gt911-1@5d {
+		status = "disabled";
+		compatible = "goodix,gt911";
+		reg = <0x5d>;
+		// interrupt-parent = < >;
+		// interrupts = < >;
+		// reset-gpios = < >;
+		// irq-gpios = < >;
+		touchscreen-inverted-x = <1>;
+		touchscreen-swapped-x-y = <1>;
+	};
+
 	gt928_dsi0: gt928@5d {
 		status = "disabled";
 		compatible = "goodix,gt928";
@@ -213,6 +225,17 @@
 		touchscreen-inverted-y = <1>;
 	};
 
+	gt911_dsi1_1: gt911-1@5d {
+		status = "disabled";
+		compatible = "goodix,gt911";
+		reg = <0x5d>;
+		// interrupt-parent = < >;
+		// interrupts = < >;
+		// reset-gpios = < >;
+		// irq-gpios = < >;
+		touchscreen-inverted-x = <1>;
+		touchscreen-swapped-x-y = <1>;
+	};
 	gt928_dsi1: gt928@5d {
 		status = "disabled";
 		compatible = "goodix,gt928";

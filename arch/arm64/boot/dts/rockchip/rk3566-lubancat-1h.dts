@@ -1020,6 +1020,18 @@
 		touchscreen-inverted-y = <1>;
 	};
 
+	gt911_dsi1_1: gt911-1@5d {
+		status = "disabled";
+		compatible = "goodix,gt911";
+		reg = <0x5d>;
+		interrupt-parent = <&gpio3>;
+		interrupts = <RK_PA6 IRQ_TYPE_LEVEL_LOW>;
+		reset-gpios = <&gpio3 RK_PA5 GPIO_ACTIVE_LOW>;
+		irq-gpios = <&gpio3 RK_PA6 GPIO_ACTIVE_HIGH>;
+		touchscreen-inverted-x = <1>;
+		touchscreen-swapped-x-y = <1>;
+	};
+
 	gt928_dsi1: gt928@5d {
 		status = "disabled";
 		compatible = "goodix,gt928";
