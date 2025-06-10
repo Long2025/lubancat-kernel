@@ -132,6 +132,7 @@ dtbo-$(CONFIG_CPU_RK3568) += \
 	rk3568-lubancat-2h-10.1-800x1280-overlay.dtbo \
 	rk3568-lubancat-2h-1024x600-overlay.dtbo \
 	rk3568-lubancat-2h-1080p-overlay.dtbo \
+	rk3568-lubancat-2h-800x1280-10.1inch-s8001280b1060b-overlay.dtbo \
 	rk3568-lubancat-2h-bsdn10-lvds-in-vp0-overlay.dtbo \
 	rk3568-lubancat-2h-lvds-10.1-800x1280-overlay.dtbo
 	
