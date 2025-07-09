@@ -566,19 +566,19 @@
 &pinctrl {
 	xl9535 {
 		pinctrl_xl9535_1: pinctrl-xl9535-1 {
-			rockchip,pins = <0 RK_PC0 RK_FUNC_GPIO &pcfg_pull_none>;
+			rockchip,pins = <0 RK_PC0 RK_FUNC_GPIO &pcfg_pull_up>;
 		};
 
 		pinctrl_xl9535_2: pinctrl-xl9535-2 {
-			rockchip,pins = <0 RK_PC1 RK_FUNC_GPIO &pcfg_pull_none>;
+			rockchip,pins = <0 RK_PC1 RK_FUNC_GPIO &pcfg_pull_up>;
 		};
 
 		pinctrl_xl9535_3: pinctrl-xl9535-3 {
-			rockchip,pins = <4 RK_PB5 RK_FUNC_GPIO &pcfg_pull_none>;
+			rockchip,pins = <4 RK_PB5 RK_FUNC_GPIO &pcfg_pull_up>;
 		};
 
 		pinctrl_xl9535_4: pinctrl-xl9535-4 {
-			rockchip,pins = <4 RK_PB4 RK_FUNC_GPIO &pcfg_pull_none>;
+			rockchip,pins = <4 RK_PB4 RK_FUNC_GPIO &pcfg_pull_up>;
 		};
 	};
 
