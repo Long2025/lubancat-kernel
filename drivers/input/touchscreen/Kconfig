@@ -1457,6 +1457,33 @@ config TOUCHSCREEN_HIMAX_CHIPSET
 	  To compile this driver as a module, choose M here: the
 	  module will be called hxchipset.
 
+config TOUCHSCREEN_JADARD_CHIPSET
+	bool "Jadard touchpanel CHIPSET"
+	depends on I2C
+	help
+	  Say Y here if you have a Jadard CHIPSET touchscreen.
+	  JADARD controllers are multi touch controllers which can
+	  report 10 touches at a time.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called jdchipset.
+
+config TOUCHSCREEN_MEDIATEK
+	bool "Mediatek touchpanel"
+	depends on I2C
+	help
+	  Say Y here if you have a Mediatek touchscreen.
+	  Mediatek controllers are multi touch controllers which can
+	  report 10 touches at a time.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called mediatek.
+
 source "drivers/input/touchscreen/hxchipset/Kconfig"
+source "drivers/input/touchscreen/jdchipset/Kconfig"
 
 endif
