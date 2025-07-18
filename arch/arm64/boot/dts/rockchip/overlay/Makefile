@@ -164,7 +164,6 @@ dtbo-$(CONFIG_CPU_RK3576) += \
 	rk3576-lubancat-can0-m2-overlay.dtbo \
 	rk3576-lubancat-can1-m3-overlay.dtbo \
 	rk3576-lubancat-i2c0-m1-overlay.dtbo \
-	rk3576-lubancat-i2c3-m2-overlay.dtbo \
 	rk3576-lubancat-i2c4-m1-overlay.dtbo \
 	rk3576-lubancat-i2c7-m1-overlay.dtbo \
 	rk3576-lubancat-i2c7-m2-overlay.dtbo \
